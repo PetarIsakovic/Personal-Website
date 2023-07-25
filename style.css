@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(245, 244, 244);
+    margin: 0px;
+}
+
+#navBar{
+    width: 100%;
+    height: 75px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#navBarBackground{
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    border-radius: 35px;
+    /* box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [spread-radius] [color] [inset]; */
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.3);
+
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+#logo{
+    height: 60px;
+    width: fit-content;
+    border-radius: 100%;
+    /* border: 2px solid grey; */
+}
