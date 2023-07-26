@@ -15,6 +15,10 @@ const lastnameV = document.getElementById("lastnameV");
 const lastnameI2 = document.getElementById("lastnameI2");
 const lastnameC = document.getElementById("lastnameC");
 
+let coolWords = document.getElementsByClassName("coolWords");
+
+const movingText = document.getElementById("movingText");
+
 
 
 navBar.style.transform = "translateY(0px)";
@@ -76,3 +80,32 @@ lastnameI2.style.transition = '100ms';
 lastnameC.style.transition = '100ms';
 console.log("wioosoasd")
     }, 2600); // 2000 milliseconds (2 seconds) delay
+
+
+coolWords[0].style.marginLeft = '-1000px';
+console.log(coolWords[0].style.marginLeft);
+
+
+
+function tick(){
+    // console.log("target: = " + (parseInt(coolWords[1].offsetWidth) - 1000));
+    console.log("target: = " + (coolWords.length));
+    // console.log("current: = " + (coolWords[0].style.marginLeft));
+    if(coolWords[coolWords.length-1].offsetWidth -950 == parseInt(coolWords[0].style.marginLeft)){
+        movingText.insertBefore(coolWords[coolWords.length-1].cloneNode(true), movingText.firstChild);
+        coolWords[coolWords.length-1].remove();
+        coolWords = document.getElementsByClassName("coolWords");
+        coolWords[0].style.marginLeft = '-1000px';
+        coolWords[1].style.marginLeft = '50px';
+    }
+
+    if(coolWords[coolWords.length-1].getBoundingClientRect().x > window.innerWidth + 1000){
+        // coolWords[coolWords.length-1].remove();
+        // coolWords = document.getElementsByClassName("coolWords");
+    }
+    coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) +1)+ "px";
+}
+
+
+
+setInterval(tick, 1);

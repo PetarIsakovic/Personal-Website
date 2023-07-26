@@ -16,11 +16,13 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    /* position:fixed; */
+    z-index: 10000;
 }
 
 #navBarBackground{
     background-color: white;
-    width: 70%;
+    width: 80%;
     height: 100%;
     border-radius: 15px;
     /* box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [spread-radius] [color] [inset]; */
@@ -60,6 +62,7 @@ body{
     font-size: 34px;
     margin-left: 20px;
     transition: 556ms;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -69,7 +72,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 #home{
@@ -91,7 +94,7 @@ body{
 #about{
     cursor: pointer;
     border-radius: 15px;
-    width: 100px;
+    width: 110px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -107,7 +110,7 @@ body{
 #projects{
     cursor: pointer;
     border-radius: 15px;
-    width: 140px;
+    width: 150px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -123,7 +126,7 @@ body{
 #awards{
     cursor: pointer;
     border-radius: 15px;
-    width: 110px;
+    width: 120px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -137,11 +140,11 @@ body{
 }
 
 #contactMe{
-    width: 125px;
-    font-size: 17.55px;
+    width: 155px;
+    font-size: 22.55px;
     background-color: rgb(167, 229, 233);
     border-radius: 9px;
-    height: 45%;
+    height: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,11 +158,12 @@ body{
 #contactMe:hover{
     background-color: rgb(146, 199, 203);
     letter-spacing: 5px;
-    width: 170px;
+    width: 190px;
     height: 50%;
 }
 
 #mainPage{
+    padding-top: 75px;
     width: 100vw;
     height: 90vh;
     border-radius: 10px;
@@ -175,7 +179,7 @@ body{
 #backgroundOfMainPage{
     border-radius: 25px;
     margin-top: 25px;
-    width: 93%;
+    width: 80%;
     height: 70%;
     background-color: rgb(146, 199, 203);
     background-image: url(background.jpg);
@@ -329,11 +333,24 @@ body{
     white-space: nowrap;
     width: 10000px;
     /* margin-right: -500px; */
-    margin-left: -500px;
+    margin-left: -1000px;
     display: flex;
 }
 
 .coolWords{
     margin-top: 26px;
     margin-left: 50px;
+    /* display: none; */
 }
+
+/* @media screen and (min-width: 100px) and (max-width: 1000px) {
+    .coolWords {
+      display: block;
+    }
+  } */
+
+  #nextPage{
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+  }
