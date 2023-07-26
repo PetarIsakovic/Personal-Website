@@ -19,6 +19,12 @@ let coolWords = document.getElementsByClassName("coolWords");
 
 const movingText = document.getElementById("movingText");
 
+const navBarBackground = document.getElementById("navBarBackground");
+
+const backgroundOfMainPage = document.getElementById("backgroundOfMainPage");
+
+const blackFade = document.getElementById("blackFade");
+
 
 
 navBar.style.transform = "translateY(0px)";
@@ -66,7 +72,6 @@ setTimeout(() => {
     nameT.style.transition = '100ms';
     nameA.style.transition = '100ms';
     nameR.style.transition = '100ms';
-    console.log("wioosoasd")
       }, 2000); // 2000 milliseconds (2 seconds) delay
 
 setTimeout(() => {
@@ -78,20 +83,20 @@ lastnameO.style.transition = '100ms';
 lastnameV.style.transition = '100ms';
 lastnameI2.style.transition = '100ms';
 lastnameC.style.transition = '100ms';
-console.log("wioosoasd")
     }, 2600); // 2000 milliseconds (2 seconds) delay
 
 
 coolWords[0].style.marginLeft = '-1000px';
-console.log(coolWords[0].style.marginLeft);
 
+let backgroundNumber = 1;
+let ticks = 0;
+let transparency = 1.0;
 
 
 function tick(){
     // console.log("target: = " + (parseInt(coolWords[1].offsetWidth) - 1000));
-    console.log("target: = " + (coolWords.length));
     // console.log("current: = " + (coolWords[0].style.marginLeft));
-    if(coolWords[coolWords.length-1].offsetWidth -950 == parseInt(coolWords[0].style.marginLeft)){
+    if(coolWords[coolWords.length-1].offsetWidth -950 < parseInt(coolWords[0].style.marginLeft)){
         movingText.insertBefore(coolWords[coolWords.length-1].cloneNode(true), movingText.firstChild);
         coolWords[coolWords.length-1].remove();
         coolWords = document.getElementsByClassName("coolWords");
@@ -99,13 +104,67 @@ function tick(){
         coolWords[1].style.marginLeft = '50px';
     }
 
-    if(coolWords[coolWords.length-1].getBoundingClientRect().x > window.innerWidth + 1000){
-        // coolWords[coolWords.length-1].remove();
-        // coolWords = document.getElementsByClassName("coolWords");
+  
+    coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) + 1)+ "px";
+
+   
+    ticks++;
+
+    if(ticks < 250){
+        if(ticks % 5 == 0){
+            blackFade.style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
+            transparency-=0.01;
+            // console.log(blackFade.style.backgroundColor);
+        }
     }
-    coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) +1)+ "px";
+    else if(ticks > 2750){
+        if(ticks % 5 == 0){
+            blackFade.style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
+            transparency+=0.01;
+            // console.log(blackFade.style.backgroundColor);
+        }
+    }
+    if(ticks % 3000 == 0){
+        ticks = 0;
+        backgroundNumber++;
+        backgroundOfMainPage.style.backgroundImage = "url(background" + backgroundNumber + ".jpeg)";
+        // console.log( "url(background" + backgroundNumber + ".jpeg);");
+        if(backgroundNumber == 6){
+            backgroundNumber = 0;
+        }
+        if(backgroundNumber == 1){
+            backgroundOfMainPage.style.backgroundPosition = "bottom";
+        }
+        else{
+            if(backgroundNumber == 2){
+                backgroundOfMainPage.style.backgroundPosition = "bottom";
+            }
+            else{
+                backgroundOfMainPage.style.backgroundPosition = "center";
+            }
+        }
+    }
 }
 
 
 
 setInterval(tick, 1);
+
+
+window.addEventListener("scroll", (e) => {
+    // console.log(window.scrollY);
+    if(window.scrollY > 30){
+        navBarBackground.style.transition = "287ms";
+        navBarBackground.style.width = "100%";
+        navBar.style.transition = "100ms";
+        navBar.style.marginTop = '0px'
+        navBarBackground.style.borderRadius = '0px';
+        
+    }
+    else{
+        navBarBackground.style.width = "80%";
+        navBar.style.marginTop = '15px'
+        navBarBackground.style.borderRadius = '15px';
+    }
+
+})
