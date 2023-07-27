@@ -15,6 +15,13 @@ const lastnameV = document.getElementById("lastnameV");
 const lastnameI2 = document.getElementById("lastnameI2");
 const lastnameC = document.getElementById("lastnameC");
 
+const dropdown = document.getElementById("dropdown");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const dropdownBackground = document.getElementById("dropdownBackground");
+
+const skill = document.getElementsByClassName("skill");
+const skills = document.getElementById("skills");
+
 let coolWords = document.getElementsByClassName("coolWords");
 
 const movingText = document.getElementById("movingText");
@@ -98,18 +105,16 @@ let backgroundNumber = backgroundOfMainPage.length-1;
 let ticks = 0;
 let transparency = 1.0;
 
+skill[0].style.marginLeft = '0px';
 
 function tick(){
-    // console.log("target: = " + (parseInt(coolWords[1].offsetWidth) - 1000));
-    // console.log("current: = " + (coolWords[0].style.marginLeft));
-    if(coolWords[coolWords.length-1].offsetWidth -950 < parseInt(coolWords[0].style.marginLeft)){
+    if(coolWords[coolWords.length-1].offsetWidth - 1450 < parseInt(coolWords[0].style.marginLeft)){
         movingText.insertBefore(coolWords[coolWords.length-1].cloneNode(true), movingText.firstChild);
         coolWords[coolWords.length-1].remove();
         coolWords = document.getElementsByClassName("coolWords");
-        coolWords[0].style.marginLeft = '-1000px';
+        coolWords[0].style.marginLeft = '-1500px';
         coolWords[1].style.marginLeft = '50px';
     }
-
   
     coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) + 1)+ "px";
 
@@ -122,7 +127,6 @@ function tick(){
                 blackFade[i].style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
             }
             transparency-=0.01;
-            // console.log(blackFade.style.backgroundColor);
         }
     }
     else if(ticks > 2750){
@@ -133,7 +137,6 @@ function tick(){
             if(transparency < 1){
                 transparency+=0.01;
             }
-            // console.log(blackFade.style.backgroundColor);
         }
     }
     if(ticks % 3000 == 0){
@@ -149,19 +152,28 @@ function tick(){
             }
             backgroundOfMainPage[backgroundNumber].appendChild(blackFade[0]);
         }
-        console.log("HEEEHAAWAA: " + blackFade.length)
     }
     if(backgroundNumber == 0){
 
         backgroundOfMainPage[backgroundOfMainPage.length-1].appendChild(blackFade[0]);
 
-        console.log("wooosh");
         backgroundNumber = backgroundOfMainPage.length-1;
         for(let i = 1; i < backgroundOfMainPage.length; i++){
             backgroundOfMainPage[i].style.display = 'block';
         }
 
     }
+
+    if(skill[0].getBoundingClientRect().x >= -144){
+        skill[0].style.marginLeft = (parseInt(skill[0].style.marginLeft) - 1) + 'px'
+    }
+    else{
+        skill[0].style.marginLeft = '150px';
+        skills.appendChild(skill[0].cloneNode(true));
+        skill[0].remove();
+        skill[0].style.marginLeft = '148px';
+    }
+    // console.log(skill[0].style.marginLeft);
 }
 
 
@@ -170,10 +182,10 @@ setInterval(tick, 1);
 
 
 window.addEventListener("scroll", (e) => {
-    // console.log(window.scrollY);
     if(window.scrollY > 30){
         navBarBackground.style.transition = "287ms";
         navBarBackground.style.width = "100%";
+        dropdown.style.width = "100%";
         navBar.style.transition = "100ms";
         navBar.style.marginTop = '0px'
         navBarBackground.style.borderRadius = '0px';
@@ -181,6 +193,7 @@ window.addEventListener("scroll", (e) => {
     }
     else{
         navBarBackground.style.width = "80%";
+        dropdown.style.width = "80%";
         navBar.style.marginTop = '15px'
         navBarBackground.style.borderRadius = '15px';
     }
@@ -188,27 +201,42 @@ window.addEventListener("scroll", (e) => {
 })
 
 namePetar.addEventListener('mouseover', () => {
-    console.log("hovering")
-    isMouseHoveringName = true;
-    namePetar.style.letterSpacing = '15px';
+    if(window.innerWidth > '515'){
+        isMouseHoveringName = true;
+        namePetar.style.letterSpacing = '15px';
+    }
 });
 
 namePetar.addEventListener('mouseout', () => {
-    console.log("notHovering")
-
     isMouseHoveringName = false;
     namePetar.style.letterSpacing = 'normal';
 });
 
 nameIsakovic.addEventListener('mouseover', () => {
-    console.log("hovering")
-    isMouseHoveringLastName = true;
-    nameIsakovic.style.letterSpacing = '15px';
+    if(window.innerWidth > '515'){
+        isMouseHoveringLastName = true;
+        nameIsakovic.style.letterSpacing = '15px';
+    }
 });
 
 nameIsakovic.addEventListener('mouseout', () => {
-    console.log("notHovering")
-
     isMouseHoveringLastName = false;
     nameIsakovic.style.letterSpacing = 'normal';
+});
+
+hamburgerMenu.addEventListener("click", () => {
+    if(dropdown.style.display == 'block'){
+        dropdown.style.display = 'none';
+        navBarBackground.style.boxShadow = "6px 8px 5px rgba(0, 0, 0, 0.1)";
+    }
+    else{
+        dropdown.style.display = 'block';
+        navBarBackground.style.boxShadow = 'none';
+    }
+    
+})
+
+window.addEventListener('resize', () => {
+    dropdown.style.display = 'none';
+    navBarBackground.style.boxShadow = "6px 8px 5px rgba(0, 0, 0, 0.1)";
 });
