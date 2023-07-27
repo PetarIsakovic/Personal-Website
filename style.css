@@ -62,7 +62,11 @@ body{
     font-size: 34px;
     margin-left: 20px;
     transition: 556ms;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Quando', serif;
+    letter-spacing: 2px;
+    /* font-family: 'Source Code Pro', monospace; */
+
+    /* font-weight: 550; */
 }
 
 
@@ -72,13 +76,14 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 17px;
+    font-size: 20px;
+    margin-left: 125px;
 }
 
 #home{
     cursor: pointer;
     border-radius: 15px;
-    width: 85px;
+    width: 100px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -94,7 +99,7 @@ body{
 #about{
     cursor: pointer;
     border-radius: 15px;
-    width: 110px;
+    width: 115px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -110,7 +115,7 @@ body{
 #projects{
     cursor: pointer;
     border-radius: 15px;
-    width: 150px;
+    width: 165px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -126,7 +131,7 @@ body{
 #awards{
     cursor: pointer;
     border-radius: 15px;
-    width: 120px;
+    width: 130px;
     height: 40px;
     display: flex;
     align-items: center;
