@@ -22,6 +22,18 @@ const dropdownBackground = document.getElementById("dropdownBackground");
 const skill = document.getElementsByClassName("skill");
 const skills = document.getElementById("skills");
 
+const mainImage = document.getElementById("mainImage");
+const informationSection = document.getElementById("informationSection");
+
+const logoInformationHolder = document.getElementById("logoInformationHolder");
+const home = document.getElementById("home");
+const home2 = document.getElementById("home2");
+const about = document.getElementById("about");
+const about2 = document.getElementById("about2");
+const nextPage = document.getElementById("nextPage");
+
+const hand = document.getElementById("hand");
+
 let coolWords = document.getElementsByClassName("coolWords");
 
 const movingText = document.getElementById("movingText");
@@ -107,6 +119,9 @@ let transparency = 1.0;
 
 skill[0].style.marginLeft = '0px';
 
+let done = true;
+let count = 0;
+
 function tick(){
     if(coolWords[coolWords.length-1].offsetWidth - 1450 < parseInt(coolWords[0].style.marginLeft)){
         movingText.insertBefore(coolWords[coolWords.length-1].cloneNode(true), movingText.firstChild);
@@ -173,7 +188,39 @@ function tick(){
         skill[0].remove();
         skill[0].style.marginLeft = '148px';
     }
-    // console.log(skill[0].style.marginLeft);
+    if(window.scrollY > mainImage.getBoundingClientRect().y-200){
+        mainImage.style.transform = "translateX(0px)";
+        mainImage.style.opacity = 1;
+        informationSection.style.transform = "translateX(0px)";
+        informationSection.style.opacity = 1;
+        skills.style.opacity = 1;
+    }
+    else{
+        mainImage.style.transform = "translateX(-550px)";
+        mainImage.style.opacity = 0;
+        informationSection.style.transform = "translateX(1050px)";
+        informationSection.style.opacity = 0;
+        skills.style.opacity = 0;
+    }
+
+    if(done){
+        hand.style.transform = "rotate(75deg)";
+        done = false;           
+    }
+    
+    if(!done){
+        console.log(count);
+        count++;
+        if(count == 400){
+            hand.style.transform = "rotate(0deg)";
+        }
+        if(count == 800){
+            done = true;
+            count = 0;
+        }
+    }
+        
+
 }
 
 
@@ -197,7 +244,6 @@ window.addEventListener("scroll", (e) => {
         navBar.style.marginTop = '15px'
         navBarBackground.style.borderRadius = '15px';
     }
-
 })
 
 namePetar.addEventListener('mouseover', () => {
@@ -239,4 +285,69 @@ hamburgerMenu.addEventListener("click", () => {
 window.addEventListener('resize', () => {
     dropdown.style.display = 'none';
     navBarBackground.style.boxShadow = "6px 8px 5px rgba(0, 0, 0, 0.1)";
+});
+
+home.addEventListener("click", function() {
+    var scrollPosition = home.offsetTop - 150;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+home2.addEventListener("click", function() {
+    var scrollPosition = home.offsetTop - 150;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    dropdown.style.display = 'none';
+});
+
+logoInformationHolder.addEventListener("click", function() {
+    var scrollPosition = logoInformationHolder.offsetTop - 150;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+about.addEventListener("click", function() {
+    var scrollPosition = nextPage.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+about2.addEventListener("click", function() {
+    var scrollPosition = nextPage.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    dropdown.style.display = 'none';
+});
+
+namePetar.addEventListener("click", function() {
+    var scrollPosition = nextPage.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+nameIsakovic.addEventListener("click", function() {
+    var scrollPosition = nextPage.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
 });
