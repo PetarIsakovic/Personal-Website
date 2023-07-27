@@ -21,10 +21,16 @@ const movingText = document.getElementById("movingText");
 
 const navBarBackground = document.getElementById("navBarBackground");
 
-const backgroundOfMainPage = document.getElementById("backgroundOfMainPage");
+const backgroundOfMainPage = document.getElementsByClassName("backgroundOfMainPage");
 
-const blackFade = document.getElementById("blackFade");
+const blackFade = document.getElementsByClassName("blackFade");
 
+const namePetar = document.getElementById("namePetar");
+
+const nameIsakovic = document.getElementById("nameIsakovic");
+
+let isMouseHoveringName = false;
+let isMouseHoveringLastName = false;
 
 
 navBar.style.transform = "translateY(0px)";
@@ -88,7 +94,7 @@ lastnameC.style.transition = '100ms';
 
 coolWords[0].style.marginLeft = '-1000px';
 
-let backgroundNumber = 1;
+let backgroundNumber = backgroundOfMainPage.length-1;
 let ticks = 0;
 let transparency = 1.0;
 
@@ -110,39 +116,51 @@ function tick(){
    
     ticks++;
 
-    if(ticks < 250){
+    if(ticks < 500 && transparency > 0.5){
         if(ticks % 5 == 0){
-            blackFade.style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
+            for(let i = 0; i < blackFade.length; i++){
+                blackFade[i].style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
+            }
             transparency-=0.01;
             // console.log(blackFade.style.backgroundColor);
         }
     }
     else if(ticks > 2750){
         if(ticks % 5 == 0){
-            blackFade.style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
-            transparency+=0.01;
+            for(let i = 0; i < blackFade.length; i++){
+                blackFade[i].style.backgroundColor = "rgba(0, 0, 0, "+transparency+")";
+            }
+            if(transparency < 1){
+                transparency+=0.01;
+            }
             // console.log(blackFade.style.backgroundColor);
         }
     }
     if(ticks % 3000 == 0){
         ticks = 0;
-        backgroundNumber++;
-        backgroundOfMainPage.style.backgroundImage = "url(background" + backgroundNumber + ".jpeg)";
-        // console.log( "url(background" + backgroundNumber + ".jpeg);");
-        if(backgroundNumber == 6){
-            backgroundNumber = 0;
-        }
-        if(backgroundNumber == 1){
-            backgroundOfMainPage.style.backgroundPosition = "bottom";
-        }
-        else{
-            if(backgroundNumber == 2){
-                backgroundOfMainPage.style.backgroundPosition = "bottom";
+        backgroundOfMainPage[backgroundNumber].style.display = 'none';
+        backgroundNumber--;
+        if(backgroundNumber > 0){
+            if(isMouseHoveringName){
+                namePetar.style.letterSpacing = '15px';
             }
-            else{
-                backgroundOfMainPage.style.backgroundPosition = "center";
+            if(isMouseHoveringLastName){
+                nameIsakovic.style.letterSpacing = '15px';
             }
+            backgroundOfMainPage[backgroundNumber].appendChild(blackFade[0]);
         }
+        console.log("HEEEHAAWAA: " + blackFade.length)
+    }
+    if(backgroundNumber == 0){
+
+        backgroundOfMainPage[backgroundOfMainPage.length-1].appendChild(blackFade[0]);
+
+        console.log("wooosh");
+        backgroundNumber = backgroundOfMainPage.length-1;
+        for(let i = 1; i < backgroundOfMainPage.length; i++){
+            backgroundOfMainPage[i].style.display = 'block';
+        }
+
     }
 }
 
@@ -168,3 +186,29 @@ window.addEventListener("scroll", (e) => {
     }
 
 })
+
+namePetar.addEventListener('mouseover', () => {
+    console.log("hovering")
+    isMouseHoveringName = true;
+    namePetar.style.letterSpacing = '15px';
+});
+
+namePetar.addEventListener('mouseout', () => {
+    console.log("notHovering")
+
+    isMouseHoveringName = false;
+    namePetar.style.letterSpacing = 'normal';
+});
+
+nameIsakovic.addEventListener('mouseover', () => {
+    console.log("hovering")
+    isMouseHoveringLastName = true;
+    nameIsakovic.style.letterSpacing = '15px';
+});
+
+nameIsakovic.addEventListener('mouseout', () => {
+    console.log("notHovering")
+
+    isMouseHoveringLastName = false;
+    nameIsakovic.style.letterSpacing = 'normal';
+});
