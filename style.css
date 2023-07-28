@@ -46,6 +46,7 @@ body{
 
 #logoInformationHolder:hover #logo{
     height: 55px;
+    width: 55px;
 }
 #logoInformationHolder:hover #logoName{
     letter-spacing: 5px;
@@ -53,7 +54,7 @@ body{
 
 #logo{
     height: 45px;
-    width: fit-content;
+    width: 45px;
     border-radius: 100%;
     transition: 556ms;
 }
@@ -345,6 +346,7 @@ body{
     }
     #logoInformationHolder:hover #logo{
         height: 45px;
+        width: 45px;
     }
     #logoInformationHolder:hover #logoName{
         letter-spacing: 2px;
@@ -825,6 +827,7 @@ body{
     overflow: hidden;
     opacity: 0;
     transition: 1s;
+    /* display: inline-block; */
     /* width: 700px; */
     /* border: 2px solid red; */
 }
