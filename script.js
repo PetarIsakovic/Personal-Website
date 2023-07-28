@@ -32,6 +32,11 @@ const about = document.getElementById("about");
 const about2 = document.getElementById("about2");
 const projects = document.getElementById("projects");
 const projects2 = document.getElementById("projects2");
+const awardsButton = document.getElementById("awards");
+const awardsButton2 = document.getElementById("awards2");
+
+const awardsPage = document.getElementById('awardsPage');
+
 
 const nextPage = document.getElementById("nextPage");
 
@@ -39,6 +44,10 @@ const hand = document.getElementById("hand");
 
 const projectsSection = document.getElementById("projectsSection");
 const project = document.getElementsByClassName("project");
+
+const awards = document.getElementsByClassName("awards");
+
+const awardsTitle = document.getElementById("awardsTitle");
 
 let coolWords = document.getElementsByClassName("coolWords");
 
@@ -128,6 +137,8 @@ skill[0].style.marginLeft = '0px';
 let done = true;
 let count = 0;
 
+let on = false;
+
 function tick(){
     if(coolWords[coolWords.length-1].offsetWidth - 1450 < parseInt(coolWords[0].style.marginLeft)){
         movingText.insertBefore(coolWords[coolWords.length-1].cloneNode(true), movingText.firstChild);
@@ -214,15 +225,35 @@ function tick(){
     for(let i = 0; i < project.length; i++){
         if(window.scrollY > project[i].getBoundingClientRect().y+200){
             project[i].style.opacity = 1;
-            // for(let i = 0; i < project.length; i++){
             project[i].style.transform = "scale(100%)";
-            // }
         }
         else{
             project[i].style.opacity = 0;
             project[i].style.transform = "scale(0%)";
         }
     }
+    
+
+    // for(let i = 0; i < awards.length; i++){
+      
+    //     if(window.scrollY > awards[i].getBoundingClientRect().y+1800){
+    //         console.log("yeet");
+    //         awards[i].style.opacity = 1;
+    //     }
+    //     else{
+    //         awards[i].style.opacity = 0;
+    //     }
+    // }
+
+    // if(window.scrollY > awardsTitle.getBoundingClientRect().y+1000){
+    //     awardsTitle.style.opacity = 1;
+    //     console.log("woosh")
+    // }
+    // else{
+    //     awardsTitle.style.opacity = 0;
+    // }
+
+    
 
     if(done){
         hand.style.transform = "rotate(75deg)";
@@ -382,6 +413,25 @@ projects.addEventListener("click", function() {
 
 projects2.addEventListener("click", function() {
     var scrollPosition = projectsSection.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    dropdown.style.display = 'none';
+});
+
+awardsButton.addEventListener("click", function() {
+    var scrollPosition = awardsPage.offsetTop-75;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+awardsButton2.addEventListener("click", function() {
+    var scrollPosition = awardsPage.offsetTop-75;
 
     window.scrollTo({
         top: scrollPosition,

@@ -1009,6 +1009,12 @@ body{
     /* border: 2px solid red; */
 }
 
+@media screen and (max-width: 403px) {
+    .context{
+        font-size: 14px;
+    }
+}
+
 .buttons{
     width: 100%;
     /* border: 2px solid red; */
@@ -1076,4 +1082,127 @@ body{
 
 #turtleHacks{
     font-size: 17px;
+}
+@media screen and (max-width: 403px) {
+    #turtleHacks{
+        font-size: 13px;
+    }
+}
+#awardsPage{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.awards{
+    overflow: 0;
+    background-color: rgb(236, 236, 236);
+    width: 70%;
+    height: 3.7vw;
+    border-radius: 25px;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 257ms;
+    text-align: center;
+    
+}
+
+.awards:hover{
+    
+    transform: scale(105%);
+}
+
+.awards:active{
+    transform: scale(105%);
+}
+
+#awardsTitle{
+    font-size: 50px;
+}
+
+
+
+@media screen and (max-width: 460px) {
+    #awardsTitle{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #awardsTitle{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #awardsTitle{
+        font-size: 25px;
+    }
+}
+
+.awardsHidden{
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .awardsHidden{
+        display: block;
+    }
+    .awardsHidden2{
+        display: none;
+    }
+    .awards{
+        font-size: 15px;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: column;
+        line-height: 15px;
+        padding-bottom: 10px;
+    }
+    .dateAwards{
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+}
+
+#footer{
+    margin-top: 100px;
+    width: 100vw;
+    height: 110px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#credits{
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+#links{
+    display: flex;
+    width: 100px;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.footerLogo{
+    width: 27px;
+    height: 27px;
+}
+
+body{
+    overscroll-behavior-y: none;
 }
