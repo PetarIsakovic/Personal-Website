@@ -130,8 +130,10 @@ function tick(){
         coolWords[0].style.marginLeft = '-1500px';
         coolWords[1].style.marginLeft = '50px';
     }
+    else{
   
-    coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) + 1)+ "px";
+        coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) + 1)+ "px";
+    }
 
    
     ticks++;
