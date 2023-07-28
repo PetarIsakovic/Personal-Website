@@ -111,7 +111,7 @@ lastnameC.style.transition = '100ms';
     }, 2600); // 2000 milliseconds (2 seconds) delay
 
 
-coolWords[0].style.marginLeft = '-1000px';
+coolWords[0].style.marginLeft = '-1500px';
 
 let backgroundNumber = backgroundOfMainPage.length-1;
 let ticks = 0;
@@ -209,7 +209,6 @@ function tick(){
     }
     
     if(!done){
-        console.log(count);
         count++;
         if(count == 400){
             hand.style.transform = "rotate(0deg)";
@@ -218,8 +217,7 @@ function tick(){
             done = true;
             count = 0;
         }
-    }
-        
+    }        
 
 }
 
