@@ -912,6 +912,168 @@ body{
 }
 
 #projectsPage{
+    margin-top: 100px;
     width: 100vw;
-    height: 100vh;
+}
+
+.project{
+    width: 400px;
+    height: 650px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 15px;
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(0%);
+    transition: 2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 1500px) {
+    .project{
+        width: 25%;
+    }
+}
+
+#projectsSection{
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: 2s;
+}
+
+.imageSection{
+    width: 100%;
+    height: 250px;
+    /* border: 2px solid red; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#image1{
+    background-image: url(gooseHacks.png);
+}
+
+#image2{
+    background-image: url(Chess.png);
+}
+
+#image3{
+    background-image: url(pianotiles.png);
+}
+
+#image4{
+    background-image: url(snake.png);
+}
+
+#image5{
+    background-image: url(hungryfishy.png);
+}
+
+#image6{
+    background-image: url(vidnote.png);
+}
+
+.titleSection{
+    color: black;
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.languagesSection{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sizeOfSmallIcon{
+    width: 30px;
+    height: 30px;
+}
+
+.context{
+    margin-top: 30px;
+    text-align: center;
+    width: 90%;
+    height: 225px;
+    /* border: 2px solid red; */
+}
+
+.buttons{
+    width: 100%;
+    /* border: 2px solid red; */
+    /* border: solid 2px red; */
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.githubButton{
+    display: flex;
+    background-color: rgb(132, 0, 255);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.websiteButton{
+    display: flex;
+    background-color: rgb(0, 72, 255);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.youtubeButton{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.devpostButton{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.buttonLogo{
+    width: 25px;
+    height: 25px;
+    margin-left: 17px;
+}
+
+.buttonLogoText{
+    color: white;
+    margin-right: 17px;
+    margin-left: 8px;
+}
+
+#turtleHacks{
+    font-size: 17px;
 }

@@ -30,9 +30,15 @@ const home = document.getElementById("home");
 const home2 = document.getElementById("home2");
 const about = document.getElementById("about");
 const about2 = document.getElementById("about2");
+const projects = document.getElementById("projects");
+const projects2 = document.getElementById("projects2");
+
 const nextPage = document.getElementById("nextPage");
 
 const hand = document.getElementById("hand");
+
+const projectsSection = document.getElementById("projectsSection");
+const project = document.getElementsByClassName("project");
 
 let coolWords = document.getElementsByClassName("coolWords");
 
@@ -205,6 +211,19 @@ function tick(){
         skills.style.opacity = 0;
     }
 
+    for(let i = 0; i < project.length; i++){
+        if(window.scrollY > project[i].getBoundingClientRect().y+200){
+            project[i].style.opacity = 1;
+            // for(let i = 0; i < project.length; i++){
+            project[i].style.transform = "scale(100%)";
+            // }
+        }
+        else{
+            project[i].style.opacity = 0;
+            project[i].style.transform = "scale(0%)";
+        }
+    }
+
     if(done){
         hand.style.transform = "rotate(75deg)";
         done = false;           
@@ -350,4 +369,23 @@ nameIsakovic.addEventListener("click", function() {
         top: scrollPosition,
         behavior: 'smooth'
     });
+});
+
+projects.addEventListener("click", function() {
+    var scrollPosition = projectsSection.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+projects2.addEventListener("click", function() {
+    var scrollPosition = projectsSection.offsetTop-120;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+    dropdown.style.display = 'none';
 });
