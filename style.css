@@ -4,7 +4,6 @@ body{
     margin: 0px;
     font-family: 'Source Code Pro', monospace;
 }
-
 #navBar{
     opacity: 0;
     transform: translateY(-100px);
@@ -21,21 +20,16 @@ body{
     z-index: 10000;
 }
 
-
-
 #navBarBackground{
     background-color: white;
     width: 80%;
     height: 100%;
     border-radius: 15px;
-    /* box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [spread-radius] [color] [inset]; */
     box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.1);
-
     padding-left: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 #logoInformationHolder{
@@ -68,11 +62,7 @@ body{
     transition: 556ms;
     font-family: 'Quando', serif;
     letter-spacing: 2px;
-    /* font-family: 'Source Code Pro', monospace; */
-
-    /* font-weight: 550; */
 }
-
 
 #navBarItems{
     width: 50%;
@@ -83,7 +73,6 @@ body{
     font-size: 20px;
     margin-left: 125px;
 }
-
 
 #contactMe{
     width: 155px;
@@ -128,14 +117,12 @@ body{
     padding-left: 10px;
     margin-left: -5.2px;
     width: 100%;
-    /* box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.1); */
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* display: none; */
 }
 
 #home2{
@@ -307,7 +294,6 @@ body{
         width: 120px;
     }
 
-
     #projects:hover{
         letter-spacing: 3px;
     }
@@ -381,7 +367,6 @@ body{
     #navBarItems{
         font-size: 12px;
     }
-
     #projects{
         width: 100px;
     }
@@ -423,11 +408,6 @@ body{
 
 }
 
-
-
-
-
-
 #mainPage{
     padding-top: 100px;
     width: 100vw;
@@ -448,7 +428,6 @@ body{
     width: 80%;
     height: 70%;
     background-color: rgb(0, 0, 0);
-    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -496,7 +475,6 @@ body{
     background-image: url(background6.jpeg);
 }
 
-
 .blackFade{
     width: 100%;
     height: 100%;
@@ -521,7 +499,6 @@ body{
 #namePetar:hover{
     letter-spacing: 15px;
 }
-
 
 #nameIsakovic{
     margin: 0px;
@@ -611,25 +588,21 @@ body{
 }
 
 @media screen and (max-width: 378px) {
-
     #namePetar{
         font-size: 50px;
     }
     #nameIsakovic{
         font-size: 50px;
     }
-  
 }
 
 @media screen and (max-width: 320px) {
-
     #namePetar{
         font-size: 40px;
     }
     #nameIsakovic{
         font-size: 40px;
     }
-  
 }
 
 @media screen and (max-width: 1150px) {
@@ -641,12 +614,9 @@ body{
     }
 }
 
-
-
 #nameP{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 1.2s;;
     opacity: 0;
 }
@@ -656,7 +626,6 @@ body{
     transform: translateY(100px);
     transition: 1.4s;
     opacity: 0;
-    
 }
 
 #nameT{
@@ -683,56 +652,49 @@ body{
 #lastnameI{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 1.2s;;
     opacity: 0;
 }
+
 #lastnameS{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 1.4s;;
     opacity: 0;
 }
 #lastnameA{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 1.6s;;
     opacity: 0;
 }
 #lastnameK{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 1.8s;;
     opacity: 0;
 }
 #lastnameO{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 2.0s;;
     opacity: 0;
 }
 #lastnameV{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 2.2s;;
     opacity: 0;
 }
 #lastnameI2{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 2.4s;;
     opacity: 0;
 }
 #lastnameC{
     display: inline-block;
     transform: translateY(100px);
-    /* transition-timing-function: cubic-bezier(1,1,0,1); */
     transition: 2.6s;;
     opacity: 0;
 }
@@ -743,7 +705,6 @@ body{
     overflow: hidden;
     white-space: nowrap;
     width: 10000px;
-    /* margin-right: -500px; */
     margin-left: -1500px;
     display: flex;
 }
@@ -751,18 +712,10 @@ body{
 .coolWords{
     margin-top: 26px;
     margin-left: 50px;
-    /* display: none; */
 }
-
-/* @media screen and (min-width: 100px) and (max-width: 1000px) {
-    .coolWords {
-      display: block;
-    }
-  } */
 
   #nextPage{
     width: 100vw;
-    /* background-color: grey; */
   }
 
   #mainImage{
@@ -788,12 +741,9 @@ body{
   }
 
   #informationSection{
-
     transform: translateX(1050px);
     opacity: 0;
     transition: 1s;
-
-    /* background-color: red; */
     margin-left: 40px;
   }
 
@@ -818,8 +768,6 @@ body{
     width: 700px;
 }
 
-
-
 #skills{
     margin-top: 80px;
     display: flex;
@@ -827,9 +775,6 @@ body{
     overflow: hidden;
     opacity: 0;
     transition: 1s;
-    /* display: inline-block; */
-    /* width: 700px; */
-    /* border: 2px solid red; */
 }
 
 .skill{
@@ -839,7 +784,6 @@ body{
 #hand{
     display: inline-block;
     transition: 2s;
-    /* transform: rotate(75deg); */
   }
 
 
@@ -879,7 +823,6 @@ body{
     #mainImage{
         width: 300px;
         height: 300px;
-        
     }
     #informationSubtitle{
         font-size: 25px;
@@ -887,7 +830,6 @@ body{
     #skills{
         margin-top: 25px;
     }
-
 }
 
 @media screen and (max-width: 350px) {
@@ -940,7 +882,6 @@ body{
 
 #projectsSection{
     width: 100%;
-    /* border: 2px solid green; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -950,7 +891,6 @@ body{
 .imageSection{
     width: 100%;
     height: 250px;
-    /* border: 2px solid red; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1006,7 +946,6 @@ body{
     text-align: center;
     width: 90%;
     height: 225px;
-    /* border: 2px solid red; */
 }
 
 @media screen and (max-width: 403px) {
@@ -1017,8 +956,6 @@ body{
 
 .buttons{
     width: 100%;
-    /* border: 2px solid red; */
-    /* border: solid 2px red; */
     display: flex;
     align-items: end;
     justify-content: center;
@@ -1110,7 +1047,6 @@ body{
     cursor: pointer;
     transition: 257ms;
     text-align: center;
-    
 }
 
 .awards:hover{
@@ -1125,8 +1061,6 @@ body{
 #awardsTitle{
     font-size: 50px;
 }
-
-
 
 @media screen and (max-width: 460px) {
     #awardsTitle{
