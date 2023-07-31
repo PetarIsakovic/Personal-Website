@@ -5,7 +5,6 @@ const nameE = document.getElementById("nameE");
 const nameT = document.getElementById("nameT");
 const nameA = document.getElementById("nameA");
 const nameR = document.getElementById("nameR");
-
 const lastnameI = document.getElementById("lastnameI");
 const lastnameS = document.getElementById("lastnameS");
 const lastnameA = document.getElementById("lastnameA");
@@ -14,17 +13,13 @@ const lastnameO = document.getElementById("lastnameO");
 const lastnameV = document.getElementById("lastnameV");
 const lastnameI2 = document.getElementById("lastnameI2");
 const lastnameC = document.getElementById("lastnameC");
-
 const dropdown = document.getElementById("dropdown");
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 const dropdownBackground = document.getElementById("dropdownBackground");
-
 const skill = document.getElementsByClassName("skill");
 const skills = document.getElementById("skills");
-
 const mainImage = document.getElementById("mainImage");
 const informationSection = document.getElementById("informationSection");
-
 const logoInformationHolder = document.getElementById("logoInformationHolder");
 const home = document.getElementById("home");
 const home2 = document.getElementById("home2");
@@ -34,57 +29,38 @@ const projects = document.getElementById("projects");
 const projects2 = document.getElementById("projects2");
 const awardsButton = document.getElementById("awards");
 const awardsButton2 = document.getElementById("awards2");
-
 const awardsPage = document.getElementById('awardsPage');
-
-
 const nextPage = document.getElementById("nextPage");
-
 const hand = document.getElementById("hand");
-
 const projectsSection = document.getElementById("projectsSection");
 const project = document.getElementsByClassName("project");
-
 const awards = document.getElementsByClassName("awards");
-
 const awardsTitle = document.getElementById("awardsTitle");
-
 let coolWords = document.getElementsByClassName("coolWords");
-
 const movingText = document.getElementById("movingText");
-
 const navBarBackground = document.getElementById("navBarBackground");
-
 const backgroundOfMainPage = document.getElementsByClassName("backgroundOfMainPage");
-
 const blackFade = document.getElementsByClassName("blackFade");
-
 const namePetar = document.getElementById("namePetar");
-
 const nameIsakovic = document.getElementById("nameIsakovic");
 
 let isMouseHoveringName = false;
 let isMouseHoveringLastName = false;
 
-
 navBar.style.transform = "translateY(0px)";
 navBar.style.opacity = 1;
-
 mainPage.style.transform = "translateY(0px)";
 mainPage.style.opacity = 1;
-
 nameP.style.transform = "translateY(0px)";
 nameE.style.transform = "translateY(0px)";
 nameT.style.transform = "translateY(0px)";
 nameA.style.transform = "translateY(0px)";
 nameR.style.transform = "translateY(0px)";
-
 nameP.style.opacity = 1;
 nameE.style.opacity = 1;
 nameT.style.opacity = 1;
 nameA.style.opacity = 1;
 nameR.style.opacity = 1;
-
 lastnameI.style.transform = "translateY(0px)";
 lastnameS.style.transform = "translateY(0px)";
 lastnameA.style.transform = "translateY(0px)";
@@ -93,7 +69,6 @@ lastnameO.style.transform = "translateY(0px)";
 lastnameV.style.transform = "translateY(0px)";
 lastnameI2.style.transform = "translateY(0px)";
 lastnameC.style.transform = "translateY(0px)";
-
 lastnameI.style.opacity = 1;
 lastnameS.style.opacity = 1;
 lastnameA.style.opacity = 1;
@@ -103,16 +78,13 @@ lastnameV.style.opacity = 1;
 lastnameI2.style.opacity = 1;
 lastnameC.style.opacity = 1;
 
-
-
-
 setTimeout(() => {
     nameP.style.transition = '100ms';
     nameE.style.transition = '100ms';
     nameT.style.transition = '100ms';
     nameA.style.transition = '100ms';
     nameR.style.transition = '100ms';
-      }, 2000); // 2000 milliseconds (2 seconds) delay
+      }, 2000);
 
 setTimeout(() => {
 lastnameI.style.transition = '100ms';
@@ -123,8 +95,7 @@ lastnameO.style.transition = '100ms';
 lastnameV.style.transition = '100ms';
 lastnameI2.style.transition = '100ms';
 lastnameC.style.transition = '100ms';
-    }, 2600); // 2000 milliseconds (2 seconds) delay
-
+    }, 2600);
 
 coolWords[0].style.marginLeft = '-1500px';
 
@@ -148,11 +119,9 @@ function tick(){
         coolWords[1].style.marginLeft = '50px';
     }
     else{
-  
         coolWords[0].style.marginLeft = (parseInt(coolWords[0].style.marginLeft) + 1)+ "px";
     }
 
-   
     ticks++;
 
     if(ticks < 500 && transparency > 0.5){
@@ -188,14 +157,11 @@ function tick(){
         }
     }
     if(backgroundNumber == 0){
-
         backgroundOfMainPage[backgroundOfMainPage.length-1].appendChild(blackFade[0]);
-
         backgroundNumber = backgroundOfMainPage.length-1;
         for(let i = 1; i < backgroundOfMainPage.length; i++){
             backgroundOfMainPage[i].style.display = 'block';
         }
-
     }
 
     if(skill[0].getBoundingClientRect().x >= -144){
@@ -233,28 +199,6 @@ function tick(){
         }
     }
     
-
-    // for(let i = 0; i < awards.length; i++){
-      
-    //     if(window.scrollY > awards[i].getBoundingClientRect().y+1800){
-    //         console.log("yeet");
-    //         awards[i].style.opacity = 1;
-    //     }
-    //     else{
-    //         awards[i].style.opacity = 0;
-    //     }
-    // }
-
-    // if(window.scrollY > awardsTitle.getBoundingClientRect().y+1000){
-    //     awardsTitle.style.opacity = 1;
-    //     console.log("woosh")
-    // }
-    // else{
-    //     awardsTitle.style.opacity = 0;
-    // }
-
-    
-
     if(done){
         hand.style.transform = "rotate(75deg)";
         done = false;           
@@ -273,10 +217,7 @@ function tick(){
 
 }
 
-
-
 setInterval(tick, 1);
-
 
 window.addEventListener("scroll", (e) => {
     if(window.scrollY > 30){
