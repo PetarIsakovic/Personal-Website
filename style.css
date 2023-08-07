@@ -1,4 +1,3 @@
-
 body{
     background-color: rgb(245, 244, 244);
     margin: 0px;
@@ -437,7 +436,7 @@ body{
     margin: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(background1.jpeg);
+    background-image: url(Images/background1.jpeg);
 }
 
 #backgroundOfMainPage2{
@@ -445,34 +444,34 @@ body{
     width: 100%;
     height: 100%;
     background-position: bottom;
-    background-image: url(background2.jpeg);
+    background-image: url(Images/background2.jpeg);
 }
 
 #backgroundOfMainPage3{
     margin: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(background3.jpeg);
+    background-image: url(Images/background3.jpeg);
 }
 #backgroundOfMainPage4{
     margin: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(background4.jpeg);
+    background-image: url(Images/background4.jpeg);
 }
 
 #backgroundOfMainPage5{
     margin: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(background5.jpeg);
+    background-image: url(Images/background5.jpeg);
 }
 
 #backgroundOfMainPage6{
     margin: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(background6.jpeg);
+    background-image: url(Images/background6.jpeg);
 }
 
 .blackFade{
@@ -786,7 +785,6 @@ body{
     transition: 2s;
   }
 
-
 body{
     overflow-x: hidden;
 }
@@ -899,27 +897,27 @@ body{
 }
 
 #image1{
-    background-image: url(gooseHacks.png);
+    background-image: url(Images/gooseHacks.png);
 }
 
 #image2{
-    background-image: url(Chess.png);
+    background-image: url(Images/Chess.png);
 }
 
 #image3{
-    background-image: url(pianotiles.png);
+    background-image: url(Images/pianotiles.png);
 }
 
 #image4{
-    background-image: url(snake.png);
+    background-image: url(Images/snake.png);
 }
 
 #image5{
-    background-image: url(hungryfishy.png);
+    background-image: url(Images/hungryfishy.png);
 }
 
 #image6{
-    background-image: url(vidnote.png);
+    background-image: url(Images/vidnote.png);
 }
 
 .titleSection{
