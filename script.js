@@ -43,7 +43,6 @@ const backgroundOfMainPage = document.getElementsByClassName("backgroundOfMainPa
 const blackFade = document.getElementsByClassName("blackFade");
 const namePetar = document.getElementById("namePetar");
 const nameIsakovic = document.getElementById("nameIsakovic");
-
 let isMouseHoveringName = false;
 let isMouseHoveringLastName = false;
 
@@ -97,18 +96,15 @@ lastnameI2.style.transition = '100ms';
 lastnameC.style.transition = '100ms';
     }, 2600);
 
-coolWords[0].style.marginLeft = '-1500px';
-
 let backgroundNumber = backgroundOfMainPage.length-1;
 let ticks = 0;
 let transparency = 1.0;
-
-skill[0].style.marginLeft = '0px';
-
+let on = false;
 let done = true;
 let count = 0;
 
-let on = false;
+skill[0].style.marginLeft = '0px';
+coolWords[0].style.marginLeft = '-1500px';
 
 function tick(){
     if(coolWords[coolWords.length-1].offsetWidth - 1450 < parseInt(coolWords[0].style.marginLeft)){
