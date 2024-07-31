@@ -920,6 +920,18 @@ body{
     background-image: url(Images/vidnote.png);
 }
 
+#image7{
+    background-image: url(Images/boxheadimage.png);
+}
+
+#image8{
+    background-image: url(Images/multiplayersnakegame.png);
+}
+
+#image9{
+    background-image: url(Images/AITherapy.png);
+}
+
 .titleSection{
     color: black;
     font-size: 27px;
