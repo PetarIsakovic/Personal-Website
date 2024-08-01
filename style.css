@@ -227,7 +227,7 @@ body{
     letter-spacing: 5px;
 }
 
-#projects{
+.projects{
     cursor: pointer;
     border-radius: 15px;
     width: 165px;
@@ -236,15 +236,17 @@ body{
     align-items: center;
     justify-content: center;
     transition: 556ms;
+    position: relative;
 }
 
-#projects:hover{
+.projects:hover{
     background-color: rgb(222, 222, 222);
     letter-spacing: 5px;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
 #awards{
-    cursor: pointer;
     border-radius: 15px;
     width: 130px;
     height: 40px;
@@ -780,10 +782,15 @@ body{
     margin-left: 150px;
 }
 
+.skill:hover{
+    transform: scale(105%);
+    cursor: pointer;
+}
+
 #hand{
     display: inline-block;
     transition: 2s;
-  }
+}
 
 body{
     overflow-x: hidden;
@@ -943,6 +950,7 @@ body{
     text-align: center;
     width: 80%;
     margin-top: 20px;
+    pointer-events: none;
 }
 
 .languagesSection{
@@ -984,6 +992,10 @@ body{
     height: 43px;
     margin-left: 5px;
     margin-right: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+.githubButton:hover{
+    border: 2px solid black;
 }
 
 .reportButton{
@@ -995,6 +1007,12 @@ body{
     height: 43px;
     margin-left: 5px;
     margin-right: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.reportButton:hover{
+    border: 2px solid black;
+
 }
 
 .websiteButton{
@@ -1006,6 +1024,10 @@ body{
     height: 43px;
     margin-left: 5px;
     margin-right: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+.websiteButton:hover{
+    border: 2px solid black;
 }
 
 .youtubeButton{
@@ -1017,6 +1039,11 @@ body{
     height: 43px;
     margin-left: 5px;
     margin-right: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.youtubeButton:hover{
+    border: 2px solid black;
 }
 
 .devpostButton{
@@ -1028,6 +1055,10 @@ body{
     height: 43px;
     margin-left: 5px;
     margin-right: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+.devpostButton:hover{
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .buttonLogo{
@@ -1164,4 +1195,20 @@ body{
 
 body{
     overscroll-behavior-y: none;
+}
+
+.left{
+    /* border: 2px solid green; */
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    height: 90%;
+}
+
+.right{
+    /* border: 2px solid red; */
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    height: 90%;
 }

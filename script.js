@@ -40,11 +40,26 @@ let coolWords = document.getElementsByClassName("coolWords");
 const movingText = document.getElementById("movingText");
 const navBarBackground = document.getElementById("navBarBackground");
 const backgroundOfMainPage = document.getElementsByClassName("backgroundOfMainPage");
+const left = document.getElementsByClassName("left");
+const right = document.getElementsByClassName("right");
 const blackFade = document.getElementsByClassName("blackFade");
 const namePetar = document.getElementById("namePetar");
 const nameIsakovic = document.getElementById("nameIsakovic");
 let isMouseHoveringName = false;
 let isMouseHoveringLastName = false;
+
+let hoveredLeft = [];
+let hoveredRight = [];
+let hovered = [];
+
+let transitioned = [];
+
+for(let i = 0; i < project.length; i++){
+    hoveredLeft[i] = false;
+    hoveredRight[i] = false;
+    hovered[i] = false;
+    transitioned[i] = true;
+}
 
 navBar.style.transform = "translateY(0px)";
 navBar.style.opacity = 1;
@@ -186,12 +201,36 @@ function tick(){
 
     for(let i = 0; i < project.length; i++){
         if(window.scrollY > project[i].getBoundingClientRect().y+200){
-            project[i].style.opacity = 1;
-            project[i].style.transform = "scale(100%)";
+                project[i].style.opacity = 1;
+                project[i].style.transform = "scale(100%)";
+                
+                if((hoveredLeft[i] || hoveredRight[i]) && transitioned[i]){
+                    project[i].style.transition = "0.05s";
+                    if(hoveredLeft[i]){
+                        project[i].style.transform = `scale(1.01) rotateZ(${-6}deg)`;
+                    }
+                    else if(hoveredRight[i]){
+                        project[i].style.transform = `rotateZ(${6}deg) scale(1.01)`;
+                    }
+                    project[i].style.cursor = "pointer";
+                    project[i].style.border = "1px solid black";
+                    project[i].style.zIndex = "1000";
+
+                }
+                else if(hovered[i]){
+                    project[i].style.border = "1px solid black";
+                }
+                else{
+                    project[i].style.zIndex = "1";
+                    project[i].style.border = "1px solid rgba(0, 0, 0, 0)";
+                }
         }
         else{
+            project[i].style.transition = "1.5s";
             project[i].style.opacity = 0;
             project[i].style.transform = "scale(0%)";
+            project[i].style.border = "none";
+            
         }
     }
     
@@ -209,7 +248,7 @@ function tick(){
             done = true;
             count = 0;
         }
-    }        
+    }
 
 }
 
@@ -376,3 +415,51 @@ awardsButton2.addEventListener("click", function() {
     });
     dropdown.style.display = 'none';
 });
+
+for(let i = 0; i < project.length; i++){
+
+    project[i].addEventListener('mouseover', () => {
+        hovered[i] = true;
+    });
+    project[i].addEventListener('mouseout', () => {
+        hovered[i] = false;
+    });
+
+    project[i].addEventListener('transitionend', function(event) {
+        transitioned[i] = true;
+    });
+
+    project[i].addEventListener('transitionstart', function(event) {
+        if(!hoveredLeft[i] && !hoveredRight[i]){
+            transitioned[i] = false;
+        }
+    });
+}
+
+for(let i = 0; i < left.length; i++){
+    left[i].addEventListener('mouseover', () => {
+        hoveredLeft[i] = true;
+        left[i].style.width = "100%";
+        right[i].style.display = "none";
+    });
+
+    left[i].addEventListener('mouseout', () => {
+        hoveredLeft[i] = false;
+        left[i].style.width = "50%";
+        right[i].style.display = "block";
+    });
+    right[i].addEventListener('mouseover', () => {
+            hoveredRight[i] = true;
+            right[i].style.width = "100%";
+            left[i].style.display = "none";
+            right[i].style.left = "0px";
+    });
+    right[i].addEventListener('mouseout', () => {
+        hoveredRight[i] = false;
+        right[i].style.width = "50%";
+        left[i].style.display = "block";
+        right[i].style.left = "50%";
+});
+
+}
+
