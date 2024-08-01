@@ -227,7 +227,7 @@ body{
     letter-spacing: 5px;
 }
 
-.projects{
+#projects{
     cursor: pointer;
     border-radius: 15px;
     width: 165px;
@@ -239,14 +239,14 @@ body{
     position: relative;
 }
 
-.projects:hover{
+#projects:hover{
     background-color: rgb(222, 222, 222);
     letter-spacing: 5px;
-    cursor: pointer;
     transition: 0.1s;
 }
 
 #awards{
+    cursor: pointer;
     border-radius: 15px;
     width: 130px;
     height: 40px;
