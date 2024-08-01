@@ -45,6 +45,8 @@ const right = document.getElementsByClassName("right");
 const blackFade = document.getElementsByClassName("blackFade");
 const namePetar = document.getElementById("namePetar");
 const nameIsakovic = document.getElementById("nameIsakovic");
+const videos = document.getElementsByClassName("videos");
+const imageSection = document.getElementsByClassName("imageSection");
 let isMouseHoveringName = false;
 let isMouseHoveringLastName = false;
 
@@ -420,9 +422,14 @@ for(let i = 0; i < project.length; i++){
 
     project[i].addEventListener('mouseover', () => {
         hovered[i] = true;
+        videos[i].style.display = "block";
+        imageSection[i].style.display = "none";
+
     });
     project[i].addEventListener('mouseout', () => {
         hovered[i] = false;
+        videos[i].style.display = "none";
+        imageSection[i].style.display = "block";
     });
 
     project[i].addEventListener('transitionend', function(event) {
