@@ -47,12 +47,16 @@ const namePetar = document.getElementById("namePetar");
 const nameIsakovic = document.getElementById("nameIsakovic");
 const videos = document.getElementsByClassName("videos");
 const imageSection = document.getElementsByClassName("imageSection");
+const leftSection = document.getElementById("leftSection");
+const rightSection = document.getElementById("rightSection");
 let isMouseHoveringName = false;
 let isMouseHoveringLastName = false;
 
 let hoveredLeft = [];
 let hoveredRight = [];
 let hovered = [];
+
+let mainHover = false;
 
 let transitioned = [];
 
@@ -192,6 +196,10 @@ function tick(){
         informationSection.style.transform = "translateX(0px)";
         informationSection.style.opacity = 1;
         skills.style.opacity = 1;
+
+        if(mainHover){
+            mainImage.style.transform = "scale(103%)";
+        }
     }
     else{
         mainImage.style.transform = "translateX(-550px)";
@@ -199,6 +207,19 @@ function tick(){
         informationSection.style.transform = "translateX(1050px)";
         informationSection.style.opacity = 0;
         skills.style.opacity = 0;
+    }
+
+    if(leftSection.getBoundingClientRect().y < 1350){
+        leftSection.style.transform = "translateX(0px)";
+        rightSection.style.transform = "translateX(0px)";
+        awardsPage.style.opacity = "1";
+        awardsPage.style.transform = "translateY(0px)";
+    }
+    else{
+        leftSection.style.transform = "translateX(-500px)";
+        rightSection.style.transform = "translateX(500px)";
+        awardsPage.style.opacity = "0";
+        awardsPage.style.transform = "translateY(500px)";
     }
 
     for(let i = 0; i < project.length; i++){
@@ -400,7 +421,7 @@ projects2.addEventListener("click", function() {
 });
 
 awardsButton.addEventListener("click", function() {
-    var scrollPosition = awardsPage.offsetTop-75;
+    var scrollPosition = awardsPage.offsetTop-100;
 
     window.scrollTo({
         top: scrollPosition,
@@ -409,7 +430,7 @@ awardsButton.addEventListener("click", function() {
 });
 
 awardsButton2.addEventListener("click", function() {
-    var scrollPosition = awardsPage.offsetTop-75;
+    var scrollPosition = awardsPage.offsetTop-100;
 
     window.scrollTo({
         top: scrollPosition,
@@ -470,3 +491,19 @@ for(let i = 0; i < left.length; i++){
 
 }
 
+mainImage.addEventListener('mouseover', () => {
+    mainHover = true;
+});
+
+mainImage.addEventListener('mouseout', () => {
+    mainHover = false;
+});
+
+mainImage.addEventListener("click", function() {
+    var scrollPosition = projectsSection.offsetTop - 100;
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+});

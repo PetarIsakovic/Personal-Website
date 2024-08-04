@@ -519,6 +519,7 @@ body{
     letter-spacing: 15px;
 }
 
+
 @media screen and (max-width: 1189px) {
     #namePetar{
         font-size: 130px;
@@ -614,6 +615,7 @@ body{
         text-align: center;
     }
 }
+
 
 #nameP{
     display: inline-block;
@@ -726,6 +728,10 @@ body{
     transform: translateX(-550px);
     opacity: 0;
     transition: 1s;
+  }
+
+  #mainImage:hover{
+    cursor: pointer;
   }
 
   #aboutMe{
@@ -1086,6 +1092,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(500px);
 }
 
 .awards{
@@ -1116,17 +1125,31 @@ body{
 
 #awardsTitle{
     font-size: 50px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+#awardsMessage{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-align: center;
 }
 
 @media screen and (max-width: 460px) {
     #awardsTitle{
         font-size: 40px;
     }
+    #awardsMessage{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 400px) {
     #awardsTitle{
         font-size: 30px;
+    }
+    #awardsMessage{
+        font-size: 12px;
     }
 }
 
@@ -1165,7 +1188,7 @@ body{
 }
 
 #footer{
-    margin-top: 100px;
+    margin-top: 40px;
     width: 100vw;
     height: 110px;
     background-color: rgb(255, 255, 255);
@@ -1222,4 +1245,128 @@ body{
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     display: none;
+}
+
+
+#awardsHolder{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+
+
+.section{
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+}
+
+#awardBox {
+    width: 550px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin: 20px auto;
+    transition: transform 0.8s ease, box-shadow 0.5s ease;
+    font-size: 25px;
+    transition: 2s;
+}
+
+
+#awardBox:hover {
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+
+.smallAward{
+    font-size: 14px;
+}
+
+#awardSection{
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    overflow: hiddren;
+}
+
+
+@media screen and (max-width: 1265px) {
+    #awardsHolder{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* border: 2px solid red; */
+        padding: 0px;
+    }
+    .section{
+        padding: 0px;
+        margin: -10px;
+    }
+    
+    
+}
+
+@media screen and (max-width: 728px) {
+    #awardSection{
+        font-size: 18px;
+    }
+    .smallAward{
+            font-size: 12px;
+    }
+    #awardBox{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .smallAward{
+        font-size: 9px;
+}
+    #awardBox{
+        width: 350px;
+    }
+    #awardSection{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .smallAward{
+        font-size: 7px;
+}
+    #awardBox{
+        width: 250px;
+    }
+    #awardSection{
+        font-size: 12px;
+    }
+}
+
+#leftSection{
+    transform: translateX(-500px);
+    transition: 1.5s;
+}
+
+#rightSection{
+    transform: translateX(500px);
+    transition: 1.5s;
+    overflow: hidden;
+    transition-timing-function: ease-out;
 }
