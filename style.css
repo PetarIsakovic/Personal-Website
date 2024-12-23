@@ -949,9 +949,14 @@ body{
     background-image: url(Images/euglena.jpeg);
 }
 #image11{
-    background-image: url(Images/SE101.png);
+    background-image: url(Images/Pacman.png);
 }
-
+#image12{
+    background-image: url(Images/Caved.png);
+}
+#image13{
+    background-image: url(Images/Sideswipe.png);
+}
 
 .titleSection{
     color: black;
