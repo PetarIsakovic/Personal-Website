@@ -728,6 +728,7 @@ body{
     transform: translateX(-550px);
     opacity: 0;
     transition: 1s;
+    z-index: 1000;
   }
 
   #mainImage:hover{
