@@ -1,3 +1,4 @@
+
 body{
     background-color: rgb(245, 244, 244);
     margin: 0px;
@@ -1379,4 +1380,10 @@ body{
     transition: 1.5s;
     overflow: hidden;
     transition-timing-function: ease-out;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100000000;
 }
