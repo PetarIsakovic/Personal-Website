@@ -773,7 +773,7 @@ body{
     margin-top: 20px;
     color: black;
     font-size: 20px;
-    text-indent: 50px;
+    /* text-indent: 50px; */
     width: 700px;
 }
 
