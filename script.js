@@ -27,15 +27,13 @@ const about = document.getElementById("about");
 const about2 = document.getElementById("about2");
 const projects = document.getElementById("projects");
 const projects2 = document.getElementById("projects2");
-const awardsButton = document.getElementById("awards");
-const awardsButton2 = document.getElementById("awards2");
-const awardsPage = document.getElementById('awardsPage');
+
+
 const nextPage = document.getElementById("nextPage");
 const hand = document.getElementById("hand");
 const projectsSection = document.getElementById("projectsSection");
 const project = document.getElementsByClassName("project");
-const awards = document.getElementsByClassName("awards");
-const awardsTitle = document.getElementById("awardsTitle");
+
 let coolWords = document.getElementsByClassName("coolWords");
 const movingText = document.getElementById("movingText");
 const navBarBackground = document.getElementById("navBarBackground");
@@ -47,10 +45,8 @@ const namePetar = document.getElementById("namePetar");
 const nameIsakovic = document.getElementById("nameIsakovic");
 const videos = document.getElementsByClassName("videos");
 const imageSection = document.getElementsByClassName("imageSection");
-const leftSection = document.getElementById("leftSection");
-const rightSection = document.getElementById("rightSection");
-let isMouseHoveringName = false;
-let isMouseHoveringLastName = false;
+
+
 
 let hoveredLeft = [];
 let hoveredRight = [];
@@ -99,23 +95,29 @@ lastnameI2.style.opacity = 1;
 lastnameC.style.opacity = 1;
 
 setTimeout(() => {
-    nameP.style.transition = '100ms';
-    nameE.style.transition = '100ms';
-    nameT.style.transition = '100ms';
-    nameA.style.transition = '100ms';
-    nameR.style.transition = '100ms';
+    nameP.style.transition = 'transform 100ms, opacity 100ms';
+    nameE.style.transition = 'transform 100ms, opacity 100ms';
+    nameT.style.transition = 'transform 100ms, opacity 100ms';
+    nameA.style.transition = 'transform 100ms, opacity 100ms';
+    nameR.style.transition = 'transform 100ms, opacity 100ms';
       }, 2000);
 
 setTimeout(() => {
-lastnameI.style.transition = '100ms';
-lastnameS.style.transition = '100ms';
-lastnameA.style.transition = '100ms';
-lastnameK.style.transition = '100ms';
-lastnameO.style.transition = '100ms';
-lastnameV.style.transition = '100ms';
-lastnameI2.style.transition = '100ms';
-lastnameC.style.transition = '100ms';
+lastnameI.style.transition = 'transform 100ms, opacity 100ms';
+lastnameS.style.transition = 'transform 100ms, opacity 100ms';
+lastnameA.style.transition = 'transform 100ms, opacity 100ms';
+lastnameK.style.transition = 'transform 100ms, opacity 100ms';
+lastnameO.style.transition = 'transform 100ms, opacity 100ms';
+lastnameV.style.transition = 'transform 100ms, opacity 100ms';
+lastnameI2.style.transition = 'transform 100ms, opacity 100ms';
+lastnameC.style.transition = 'transform 100ms, opacity 100ms';
     }, 2600);
+
+setTimeout(() => {
+    document.body.classList.add('page-loaded');
+}, 3500);
+
+
 
 let backgroundNumber = backgroundOfMainPage.length-1;
 let ticks = 0;
@@ -164,12 +166,7 @@ function tick(){
         backgroundOfMainPage[backgroundNumber].style.display = 'none';
         backgroundNumber--;
         if(backgroundNumber > 0){
-            if(isMouseHoveringName){
-                namePetar.style.letterSpacing = '15px';
-            }
-            if(isMouseHoveringLastName){
-                nameIsakovic.style.letterSpacing = '15px';
-            }
+
             backgroundOfMainPage[backgroundNumber].appendChild(blackFade[0]);
         }
     }
@@ -209,18 +206,7 @@ function tick(){
         skills.style.opacity = 0;
     }
 
-    if(leftSection.getBoundingClientRect().y < 1350){
-        leftSection.style.transform = "translateX(0px)";
-        rightSection.style.transform = "translateX(0px)";
-        awardsPage.style.opacity = "1";
-        awardsPage.style.transform = "translateY(0px)";
-    }
-    else{
-        leftSection.style.transform = "translateX(-500px)";
-        rightSection.style.transform = "translateX(500px)";
-        awardsPage.style.opacity = "0";
-        awardsPage.style.transform = "translateY(500px)";
-    }
+
 
     for(let i = 0; i < project.length; i++){
         if(window.scrollY > project[i].getBoundingClientRect().y+200){
@@ -295,29 +281,7 @@ window.addEventListener("scroll", (e) => {
     }
 })
 
-namePetar.addEventListener('mouseover', () => {
-    if(window.innerWidth > '515'){
-        isMouseHoveringName = true;
-        namePetar.style.letterSpacing = '15px';
-    }
-});
 
-namePetar.addEventListener('mouseout', () => {
-    isMouseHoveringName = false;
-    namePetar.style.letterSpacing = 'normal';
-});
-
-nameIsakovic.addEventListener('mouseover', () => {
-    if(window.innerWidth > '515'){
-        isMouseHoveringLastName = true;
-        nameIsakovic.style.letterSpacing = '15px';
-    }
-});
-
-nameIsakovic.addEventListener('mouseout', () => {
-    isMouseHoveringLastName = false;
-    nameIsakovic.style.letterSpacing = 'normal';
-});
 
 hamburgerMenu.addEventListener("click", () => {
     if(dropdown.style.display == 'block'){
@@ -420,24 +384,9 @@ projects2.addEventListener("click", function() {
     dropdown.style.display = 'none';
 });
 
-awardsButton.addEventListener("click", function() {
-    var scrollPosition = awardsPage.offsetTop-100;
 
-    window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-    });
-});
 
-awardsButton2.addEventListener("click", function() {
-    var scrollPosition = awardsPage.offsetTop-100;
 
-    window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-    });
-    dropdown.style.display = 'none';
-});
 
 for(let i = 0; i < project.length; i++){
 
@@ -507,4 +456,6 @@ mainImage.addEventListener("click", function() {
         behavior: 'smooth'
     });
 });
+
+
 
